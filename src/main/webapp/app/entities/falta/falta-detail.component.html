@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="falta">
+            <h2><span jhiTranslate="myApp.falta.detail.title">Falta</span> {{falta.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="myApp.falta.quantidade">Quantidade</span></dt>
+                <dd>
+                    <span>{{falta.quantidade}}</span>
+                </dd>
+                <dt><span jhiTranslate="myApp.falta.data">Data</span></dt>
+                <dd>
+                    <span>{{falta.data}}</span>
+                </dd>
+                <dt><span jhiTranslate="myApp.falta.aluno">Aluno</span></dt>
+                <dd>
+                    <div *ngIf="falta.aluno">
+                        <a [routerLink]="['/aluno', falta.aluno?.id, 'view']">{{falta.aluno?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="myApp.falta.aula">Aula</span></dt>
+                <dd>
+                    <div *ngIf="falta.aula">
+                        <a [routerLink]="['/aula', falta.aula?.id, 'view']">{{falta.aula?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/falta', falta.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

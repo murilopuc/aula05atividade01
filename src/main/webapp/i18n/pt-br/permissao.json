@@ -1,0 +1,22 @@
+{
+    "myApp": {
+        "permissao": {
+            "home": {
+                "title": "Permissaos",
+                "createLabel": "Criar novo Permissao",
+                "createOrEditLabel": "Criar ou editar Permissao"
+            },
+            "created": "Um novo Permissao foi criado com o identificador {{ param }}",
+            "updated": "Um Permissao foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Permissao foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Permissao {{ id }}?"
+            },
+            "detail": {
+                "title": "Permissao"
+            },
+            "codigopERMISSAO": "Codigop ERMISSAO",
+            "usuario": "Usuario"
+        }
+    }
+}

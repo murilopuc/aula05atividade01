@@ -1,0 +1,22 @@
+{
+    "myApp": {
+        "entrega": {
+            "home": {
+                "title": "Entregas",
+                "createLabel": "Criar novo Entrega",
+                "createOrEditLabel": "Criar ou editar Entrega"
+            },
+            "created": "Um novo Entrega foi criado com o identificador {{ param }}",
+            "updated": "Um Entrega foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Entrega foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Entrega {{ id }}?"
+            },
+            "detail": {
+                "title": "Entrega"
+            },
+            "quantidade": "Quantidade",
+            "atividade": "Atividade"
+        }
+    }
+}

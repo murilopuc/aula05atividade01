@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="aula">
+            <h2><span jhiTranslate="myApp.aula.detail.title">Aula</span> {{aula.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="myApp.aula.quantidade">Quantidade</span></dt>
+                <dd>
+                    <span>{{aula.quantidade}}</span>
+                </dd>
+                <dt><span jhiTranslate="myApp.aula.data">Data</span></dt>
+                <dd>
+                    <span>{{aula.data}}</span>
+                </dd>
+                <dt><span jhiTranslate="myApp.aula.turma">Turma</span></dt>
+                <dd>
+                    <div *ngIf="aula.turma">
+                        <a [routerLink]="['/turma', aula.turma?.id, 'view']">{{aula.turma?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/aula', aula.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

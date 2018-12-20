@@ -1,0 +1,25 @@
+{
+    "myApp": {
+        "falta": {
+            "home": {
+                "title": "Faltas",
+                "createLabel": "Criar novo Falta",
+                "createOrEditLabel": "Criar ou editar Falta"
+            },
+            "created": "Um novo Falta foi criado com o identificador {{ param }}",
+            "updated": "Um Falta foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Falta foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Falta {{ id }}?"
+            },
+            "detail": {
+                "title": "Falta"
+            },
+            "quantidade": "Quantidade",
+            "data": "Data",
+            "aluno": "Aluno",
+            "aula": "Aula",
+            "periodoLetivo": "Periodo Letivo"
+        }
+    }
+}

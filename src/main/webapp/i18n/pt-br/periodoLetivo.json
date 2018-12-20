@@ -1,0 +1,24 @@
+{
+    "myApp": {
+        "periodoLetivo": {
+            "home": {
+                "title": "Periodo Letivos",
+                "createLabel": "Criar novo Periodo Letivo",
+                "createOrEditLabel": "Criar ou editar Periodo Letivo"
+            },
+            "created": "Um novo Periodo Letivo foi criado com o identificador {{ param }}",
+            "updated": "Um Periodo Letivo foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Periodo Letivo foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Periodo Letivo {{ id }}?"
+            },
+            "detail": {
+                "title": "Periodo Letivo"
+            },
+            "dAtaFinal": "D Ata Final",
+            "dataInicial": "Data Inicial",
+            "falta": "Falta",
+            "aula": "Aula"
+        }
+    }
+}

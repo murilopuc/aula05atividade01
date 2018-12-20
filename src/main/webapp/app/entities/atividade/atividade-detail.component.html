@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="atividade">
+            <h2><span jhiTranslate="myApp.atividade.detail.title">Atividade</span> {{atividade.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="myApp.atividade.codigoAtividade">Codigo Atividade</span></dt>
+                <dd>
+                    <span>{{atividade.codigoAtividade}}</span>
+                </dd>
+                <dt><span jhiTranslate="myApp.atividade.nome">Nome</span></dt>
+                <dd>
+                    <span>{{atividade.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="myApp.atividade.entrega">Entrega</span></dt>
+                <dd>
+                    <div *ngIf="atividade.entrega">
+                        <a [routerLink]="['/entrega', atividade.entrega?.id, 'view']">{{atividade.entrega?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/atividade', atividade.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

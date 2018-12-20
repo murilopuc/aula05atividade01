@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-periodo-letivo-heading" jhiTranslate="myApp.periodoLetivo.home.createOrEditLabel">Create or edit a Periodo Letivo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!periodoLetivo.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="periodoLetivo.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="myApp.periodoLetivo.dAtaFinal" for="field_dAtaFinal">D Ata Final</label>
+                    <input type="text" class="form-control" name="dAtaFinal" id="field_dAtaFinal"
+                        [(ngModel)]="periodoLetivo.dAtaFinal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="myApp.periodoLetivo.dataInicial" for="field_dataInicial">Data Inicial</label>
+                    <input type="text" class="form-control" name="dataInicial" id="field_dataInicial"
+                        [(ngModel)]="periodoLetivo.dataInicial" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="myApp.periodoLetivo.falta" for="field_falta">Falta</label>
+                    <select class="form-control" id="field_falta" name="falta" [(ngModel)]="periodoLetivo.falta">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="faltaOption.id === periodoLetivo.falta?.id ? periodoLetivo.falta : faltaOption" *ngFor="let faltaOption of faltas; trackBy: trackFaltaById">{{faltaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="myApp.periodoLetivo.aula" for="field_aula">Aula</label>
+                    <select class="form-control" id="field_aula" name="aula" [(ngModel)]="periodoLetivo.aula">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="aulaOption.id === periodoLetivo.aula?.id ? periodoLetivo.aula : aulaOption" *ngFor="let aulaOption of aulas; trackBy: trackAulaById">{{aulaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

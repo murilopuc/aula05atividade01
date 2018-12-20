@@ -1,0 +1,25 @@
+{
+    "myApp": {
+        "atividade": {
+            "home": {
+                "title": "Atividades",
+                "createLabel": "Criar novo Atividade",
+                "createOrEditLabel": "Criar ou editar Atividade"
+            },
+            "created": "Um novo Atividade foi criado com o identificador {{ param }}",
+            "updated": "Um Atividade foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Atividade foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Atividade {{ id }}?"
+            },
+            "detail": {
+                "title": "Atividade"
+            },
+            "codigoAtividade": "Codigo Atividade",
+            "nome": "Nome",
+            "entrega": "Entrega",
+            "nota": "Nota",
+            "disciplina": "Disciplina"
+        }
+    }
+}

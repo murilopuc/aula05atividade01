@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="turma">
+            <h2><span jhiTranslate="myApp.turma.detail.title">Turma</span> {{turma.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="myApp.turma.codigoTurma" [ngbTooltip]="'myApp.turma.help.codigoTurma' | translate">Codigo Turma</span></dt>
+                <dd>
+                    <span>{{turma.codigoTurma}}</span>
+                </dd>
+                <dt><span jhiTranslate="myApp.turma.nome">Nome</span></dt>
+                <dd>
+                    <span>{{turma.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="myApp.turma.professor">Professor</span></dt>
+                <dd>
+                    <div *ngIf="turma.professor">
+                        <a [routerLink]="['/professor', turma.professor?.id, 'view']">{{turma.professor?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/turma', turma.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

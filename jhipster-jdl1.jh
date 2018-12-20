@@ -1,0 +1,133 @@
+entity Usuario {
+	Codigo Integer,
+    Nome String
+}
+
+entity Permissao {
+	CodigopERMISSAO Integer
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Pessoa {
+	CodigoPessoa Integer,
+	Nome String
+}
+
+entity Aluno {
+	CodigoAluno Integer
+	Nome String 
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Professor {
+	CodigoProfessor Integer,
+	Nome String
+}
+
+/**
+ * The Employee entity.
+ */
+entity Turma {
+	/**
+	* The firstname attribute.
+	*/
+	CodigoTurma Integer,
+	Nome String
+}
+
+entity Disciplina {
+	CodigoDisciplina Integer,
+	Nome String
+}
+
+entity Nota {
+	Nota Float,
+}
+
+entity Falta {
+	Quantidade Float,
+    Data Datetime,
+}
+
+entity Aula {
+	Quantidade Float,
+    Data Datetime,
+}
+
+entity Atividade {
+	CodigoAtividade Integer,
+    Nome String,
+}
+
+entity Entrega {
+	Quantidade Float
+}
+
+entity PeriodoLetivo {
+	DAtaFinal String,
+    DataInicial String,
+}
+
+relationship OneToOne {
+	Permissao to Usuario
+}
+
+relationship OneToOne {
+	Pessoa to Usuario
+}
+
+relationship OneToOne {
+	Aluno to Pessoa
+}
+
+relationship OneToOne {
+	Professor to Pessoa
+}
+
+relationship OneToOne {
+	Disciplina to Professor
+}
+
+relationship OneToOne {
+	Turma to Professor
+}
+
+relationship OneToOne {
+	Nota to Aluno
+}
+
+relationship OneToOne {
+	Nota to Atividade
+}
+
+relationship OneToOne {
+	Disciplina to Atividade
+}
+
+relationship OneToOne {
+	Falta to Aluno
+}
+
+relationship OneToOne {
+	Falta to Aula
+}
+
+relationship OneToOne {
+	Atividade to Entrega
+}
+
+relationship OneToOne {
+	Aula to Turma
+}
+
+relationship OneToOne {
+	PeriodoLetivo to Falta
+}
+
+relationship OneToOne {
+	PeriodoLetivo to Aula
+}
